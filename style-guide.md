@@ -11,15 +11,15 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Soft blue: hsl(215, 51%, 70%)
-- Cyan: hsl(178, 100%, 50%)
+--clr-Soft_blue: hsl(215, 51%, 70%);
+--clr-Cyan: hsl(178, 100%, 50%);
 
 ### Neutral
 
-- Very dark blue (main BG): hsl(217, 54%, 11%)
-- Very dark blue (card BG): hsl(216, 50%, 16%)
-- Very dark blue (line): hsl(215, 32%, 27%)
-- White: hsl(0, 0%, 100%)
+--clr-dark_blue-main: hsl(217, 54%, 11%);
+--clr-dark_blue-card: hsl(216, 50%, 16%);
+--clr-dark_blue-line: hsl(215, 32%, 27%);
+--clr-white: hsl(0, 0%, 100%);
 
 ## Typography
 

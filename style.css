@@ -6,6 +6,16 @@
   --clr-dark_blue-line: hsl(215, 32%, 27%);
   --clr-white: hsl(0, 0%, 100%);
   --main-trans-dur: 0.3s;
+  --fw-bold: 600;
+  --fw-light: 400;
+  --fw-thin: 300;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,25 +23,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: "Outfit", sans-serif;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .container {
-  max-width: 100%;
   padding: 20px;
   background-color: var(--clr-dark_blue-card);
   border-radius: 20px;
 }
 
-.container .image {
-  position: relative;
-  z-index: 1;
-  transition: all var(--main-trans-dur) ease;
+@media (width > 375px) {
+  .container {
+    max-width: 370px;
+  }
 }
 
-.image .svg-hover svg {
+@media screen and (width < 767px) {
+  .container {
+    margin-inline: 15px;
+  }
+}
+
+.container .image {
+  position: relative;
+  transition: all var(--main-trans-dur) ease;
+  z-index: 1;
+}
+
+.image svg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,9 +59,10 @@ body {
   transition: var(--main-trans-dur) ease;
 }
 
-.container .image img:nth-child(1) {
+.container .image img {
   max-width: 100%;
   border-radius: 10px;
+  display: block;
 }
 
 .container .image::after {
@@ -51,11 +71,11 @@ body {
   left: 0;
   top: 0;
   width: 100%;
-  height: 99%;
-  cursor: pointer;
+  height: 100%;
   background-color: var(--clr-Cyan);
-  opacity: 0;
   border-radius: 10px;
+  cursor: pointer;
+  opacity: 0;
   z-index: 1;
   transition: all var(--main-trans-dur) ease;
 }
@@ -70,10 +90,12 @@ body {
 
 .container > h2 {
   color: var(--clr-white);
-  font-weight: 400;
+  font-weight: var(--fw-bold);
   transition: color var(--main-trans-dur) ease;
   width: fit-content;
   cursor: default;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .container > h2:hover {
@@ -83,6 +105,8 @@ body {
 .container > p {
   line-height: 1.8;
   color: var(--clr-Soft_blue);
+  margin-bottom: 10px;
+  font-weight: var(--fw-thin);
 }
 
 .container .con-info {
@@ -131,6 +155,7 @@ body {
 
 .con-footer img {
   width: 40px;
+  height: 40px;
   border: 1px solid var(--clr-white);
   border-radius: 50%;
 }
@@ -141,16 +166,10 @@ body {
 
 .con-footer p span {
   color: var(--clr-white);
-  transition: color var(--main-trans-dur) ease;
   cursor: default;
+  transition: color var(--main-trans-dur) ease;
 }
 
 .con-footer p span:hover {
   color: var(--clr-Cyan);
-}
-
-@media (min-width: 375px) {
-  .container {
-    max-width: 370px;
-  }
 }
